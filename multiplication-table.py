@@ -21,21 +21,16 @@ Height of multiplication table: 8
   7  14  21  28  35  42  49  56  63  70
   8  16  24  32  40  48  56  64  72  80
 """
-width = int(input("What is the width of the multiplication table? "))
-height = int(input("What is the height of the multiplication table? "))
+#Inputs
+width = int(input("Width of multiplication table: "))
+height = int(input("Height of multiplication table: "))
 
-#List generator
-row = [x+1 for x in range(width)]
-column = [x+1 for x in range(height)]
-print (row)
-print (column)
+row = ""
 
-#List multiplier
-for x in range(width):
-    temp = int(row[x]) * int(column[x])
-    print (temp)
-#row = [(x+1) * row for x in row]
-#for y in range(height):
-#    print (row)
-#    row = [x]
-#print (row)
+#Iterates row generation "height" times
+for y in range(1, height + 1):
+#Adds multiples in string form to "row" "width" times
+    for x in range(1, width + 1):
+        row += ("{0:>3} ".format(x * y))
+    print (row)
+    row = ""
